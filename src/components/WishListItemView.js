@@ -47,6 +47,7 @@ class WishListItemView extends Component {
         <span>{item.price.toFixed(2)}</span>
         <span>
           <button onClick={this.onToggleEdit}>Edit</button>
+          <button onClick={item.remove}>Remove</button>
         </span>
       </li>
     )
