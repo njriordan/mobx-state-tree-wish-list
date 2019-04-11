@@ -1,3 +1,4 @@
+import { getSnapshot, onSnapshot, onPatch } from "mobx-state-tree"
 import { WishListItem } from "./WishList"
 import { WishList } from "./WishList"
 
@@ -29,13 +30,38 @@ it("can create a wishlist", () => {
 
 it("can add new items", () => {
   const list = WishList.create()
-  list.add(WishListItem.create({
+
+  // Every time we change the mode we create a snapshot
+  const states = []
+  onSnapshot(list, snapshot => {
+    states.push(snapshot)
+  })
+
+  // Every time we change the mode we create a patch
+  const patches = []
+  onPatch(list, patch => {
+    patches.push(patch)
+  })
+
+  list.add({
     name: "Pieds d'argile",
     price: 22.29
-  }))
+  })
 
-  expect(list.items.length).toBe(1)
-  expect(list.items[0].name).toBe("Pieds d'argile")
   list.items[0].changeName("Au guet !")
-  expect(list.items[0].name).toBe("Au guet !")
+
+  // Can match against json object
+  expect(getSnapshot(list)).toEqual({
+    items: [{
+      name: "Au guet !",
+      price: 22.29,
+      image: ""
+    }]
+  })
+
+  // Can also match against snapshot
+  expect(getSnapshot(list)).toMatchSnapshot()
+
+  expect(states).toMatchSnapshot()
+  expect(patches).toMatchSnapshot()
 })

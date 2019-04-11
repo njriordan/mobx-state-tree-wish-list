@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can add new items 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "image": "",
+      "name": "Au guet !",
+      "price": 22.29,
+    },
+  ],
+}
+`;
+
+exports[`can add new items 2`] = `
+Array [
+  Object {
+    "items": Array [
+      Object {
+        "image": "",
+        "name": "Pieds d'argile",
+        "price": 22.29,
+      },
+    ],
+  },
+  Object {
+    "items": Array [
+      Object {
+        "image": "",
+        "name": "Au guet !",
+        "price": 22.29,
+      },
+    ],
+  },
+]
+`;
+
+exports[`can add new items 3`] = `
+Array [
+  Object {
+    "op": "add",
+    "path": "/items/0",
+    "value": Object {
+      "image": "",
+      "name": "Pieds d'argile",
+      "price": 22.29,
+    },
+  },
+  Object {
+    "op": "replace",
+    "path": "/items/0/name",
+    "value": "Au guet !",
+  },
+]
+`;
