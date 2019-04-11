@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { WishList } from './models/WishList'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const wishList = WishList.create({
+  items: [
+    {
+      name: "Pyramides",
+      price: 7.9,
+      image: "https://images-na.ssl-images-amazon.com/images/I/71LRdzX5HyL.jpg"
+    },
+    {
+      name: "Allez les mages!",
+      price: 9.8,
+      image: "https://m.media-amazon.com/images/I/71P8zySaR8L._AC_UL872_QL65_.jpg"
+    }
+  ]
+})
+
+ReactDOM.render(<App  wishList={wishList} />, document.getElementById('root'));
+
+setInterval(() => {
+  wishList.items[0].changePrice(wishList.items[0].price + 1)
+}, 1000)
+

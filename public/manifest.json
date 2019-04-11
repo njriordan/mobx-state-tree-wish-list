@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Wish list",
+  "name": "MobX State Tree Wish list",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://www.discworldemporium.com/img/favicon.ico?1525423686",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
