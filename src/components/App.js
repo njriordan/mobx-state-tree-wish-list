@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { observer } from "mobx-react"
 import User from './User'
 
 const logo = "https://www.discworldemporium.com/img/turtle3.gif"
@@ -35,4 +36,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default observer(App);

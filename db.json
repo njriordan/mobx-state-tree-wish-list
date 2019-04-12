@@ -27,5 +27,39 @@
       "price": 7.5,
       "image": "https://images-eu.ssl-images-amazon.com/images/I/71zFBahwwZL._AC_UL480_SR294,480_.jpg"
     }
-  ]
+  ],
+  "users": {
+    "baf70cf4": {
+      "id": "baf70cf4",
+      "name": "Chicard",
+      "gender": "m",
+      "wishList": {
+        "items": []
+      }
+    },
+    "baf712b2": {
+      "id": "baf712b2",
+      "name": "Vimaire",
+      "gender": "m",
+      "wishList": {
+        "items": []
+      }
+    },
+    "baf71442": {
+      "id": "baf71442",
+      "name": "Carotte",
+      "gender": "m",
+      "wishList": {
+        "items": []
+      }
+    },
+    "baf71582": {
+      "id": "baf71582",
+      "name": "Hilare",
+      "gender": "f",
+      "wishList": {
+        "items": []
+      }
+    }
+  }
 }

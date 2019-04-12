@@ -7,32 +7,9 @@ import { getSnapshot } from "mobx-state-tree"
 
 import { Group } from './models/Group'
 
-let initialState = {
-  users: {
-    baf70cf4: {
-      id: "baf70cf4",
-      name: "Chicard",
-      gender: "m"
-    },
-    baf712b2: {
-      id: "baf712b2",
-      name: "Vimaire",
-      gender: "m"
-    },
-    baf71442: {
-      id: "baf71442",
-      name: "Carotte",
-      gender: "m"
-    },
-    baf71582: {
-      id: "baf71582",
-      name: "Hilare",
-      gender: "f"
-    },
-  }
-}
+let initialState = { users: {} }
 
-let group = Group.create(initialState)
+let group = window.group = Group.create(initialState)
 
 function renderApp() {
   ReactDOM.render(<App  group={group} />, document.getElementById('root'));
@@ -49,7 +26,7 @@ if (module.hot) {
   module.hot.accept(["./models/WishList", () => {
     // new model definitions
     const snapshot = getSnapshot(group)
-    group = Group.create(snapshot)
+    group = window.group = Group.create(snapshot)
     renderApp()
   }])
 }
