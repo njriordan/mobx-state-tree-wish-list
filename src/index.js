@@ -5,31 +5,40 @@ import App from './components/App';
 
 import { getSnapshot } from "mobx-state-tree"
 
-import { WishList } from './models/WishList'
+import { Group } from './models/Group'
 
 let initialState = {
-  items: [
-    {
-      name: "Pyramides",
-      price: 7.9,
-      image: "https://images-na.ssl-images-amazon.com/images/I/71LRdzX5HyL.jpg"
+  users: {
+    baf70cf4: {
+      id: "baf70cf4",
+      name: "Chicard",
+      gender: "m"
     },
-    {
-      name: "Allez les mages!",
-      price: 9.8,
-      image: "https://m.media-amazon.com/images/I/71P8zySaR8L._AC_UL872_QL65_.jpg"
-    }
-  ]
+    baf712b2: {
+      id: "baf712b2",
+      name: "Vimaire",
+      gender: "m"
+    },
+    baf71442: {
+      id: "baf71442",
+      name: "Carotte",
+      gender: "m"
+    },
+    baf71582: {
+      id: "baf71582",
+      name: "Hilare",
+      gender: "f"
+    },
+  }
 }
 
-
-let wishList = WishList.create(initialState)
+let group = Group.create(initialState)
 
 function renderApp() {
-  ReactDOM.render(<App  wishList={wishList} />, document.getElementById('root'));
+  ReactDOM.render(<App  group={group} />, document.getElementById('root'));
 }
 
-renderApp(wishList)
+renderApp()
 
 if (module.hot) {
   module.hot.accept(["./components/App"], () => {
@@ -39,8 +48,8 @@ if (module.hot) {
 
   module.hot.accept(["./models/WishList", () => {
     // new model definitions
-    const snapshot = getSnapshot(wishList)
-    wishList = WishList.create(snapshot)
+    const snapshot = getSnapshot(group)
+    group = Group.create(snapshot)
     renderApp()
   }])
 }
