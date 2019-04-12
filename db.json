@@ -28,8 +28,8 @@
       "image": "https://images-eu.ssl-images-amazon.com/images/I/71zFBahwwZL._AC_UL480_SR294,480_.jpg"
     }
   ],
-  "users": {
-    "baf70cf4": {
+  "users": [
+    {
       "id": "baf70cf4",
       "name": "Chicard",
       "gender": "m",
@@ -37,15 +37,31 @@
         "items": []
       }
     },
-    "baf712b2": {
+    {
       "id": "baf712b2",
       "name": "Vimaire",
       "gender": "m",
       "wishList": {
-        "items": []
+        "items": [
+          {
+            "name": "Pyramides",
+            "price": 7.9,
+            "image": "https://images-na.ssl-images-amazon.com/images/I/71LRdzX5HyL.jpg"
+          },
+          {
+            "name": "Allez les mages!",
+            "price": 9.8,
+            "image": "https://m.media-amazon.com/images/I/71P8zySaR8L._AC_UL872_QL65_.jpg"
+          },
+          {
+            "name": "Mortimer",
+            "price": 6.95,
+            "image": "https://images-eu.ssl-images-amazon.com/images/I/71OG9LJk9PL._AC_UL480_SR294,480_.jpg"
+          }
+        ]
       }
     },
-    "baf71442": {
+    {
       "id": "baf71442",
       "name": "Carotte",
       "gender": "m",
@@ -53,7 +69,7 @@
         "items": []
       }
     },
-    "baf71582": {
+    {
       "id": "baf71582",
       "name": "Hilare",
       "gender": "f",
@@ -61,5 +77,5 @@
         "items": []
       }
     }
-  }
+  ]
 }
