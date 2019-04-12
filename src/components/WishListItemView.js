@@ -37,7 +37,7 @@ class WishListItemView extends Component {
   }
 
   render() {
-    const { item } = this.props
+    const { item, readonly } = this.props
     return this.state.isEditing ? (
       this.renderEditable()
     ) : (
@@ -45,10 +45,12 @@ class WishListItemView extends Component {
         {item.image && <img alt="item" src={item.image} />}
         <h3>{item.name}</h3>
         <span>{item.price.toFixed(2)}</span>
-        <span>
-          <button onClick={this.onToggleEdit}>Edit</button>
-          <button onClick={item.remove}>Remove</button>
-        </span>
+        { !readonly && (
+          <span>
+            <button onClick={this.onToggleEdit}>Edit</button>
+            <button onClick={item.remove}>Remove</button>
+          </span>
+        )}
       </li>
     )
   }

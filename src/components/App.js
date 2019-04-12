@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WishListView from "./WishListView"
+import User from './User'
 
 const logo = "https://www.discworldemporium.com/img/turtle3.gif"
 
@@ -28,8 +28,8 @@ class App extends Component {
               {user.name}
             </option>)}
         </select>
-        { selectedUser && <WishListView wishList={selectedUser.wishList} />}
-        { selectedUser && <button onClick={selectedUser.getSuggestions}>Suggestions</button>}
+        <button onClick={group.drawLots}>Draw lots</button>
+        { selectedUser && <User user={selectedUser} /> }
       </div>
     );
   }
